@@ -306,16 +306,16 @@ Press esc, or click the close the button to close this dialog box.
                                 <li class=" nav-item"><a style="font-size: 1.2rem;" href="https://www.gov.ph">GOVPH
                                     </a>
                                 </li>
-                                <?php 
-                                    wp_nav_menu( 
+                                <?php
+                                    wp_nav_menu(
                                         array(
-                                            'theme_location'  => 'topbar_left', 
-                                            'items_wrap' => '%3$s', 
-                                            'container' => false, 
-                                            'fallback_cb' => false, 
-                                            'walker' => new Topbar_Nav_Menu() 
+                                            'theme_location'  => 'topbar_left',
+                                            'items_wrap' => '%3$s',
+                                            'container' => false,
+                                            'fallback_cb' => 'gwt_bsa_default_menu',
+                                            'walker' => new Topbar_Nav_Menu()
                                         )
-                                    ); 
+                                    );
                                 ?>
                             </ul>
                         </nav>
