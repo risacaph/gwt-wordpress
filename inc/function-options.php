@@ -881,14 +881,18 @@ function govph_displayoptions( $options ){
       echo $logoSetting;
       break;
     case 'govph_logo':
-      $logo_image = (!empty($option['govph_logo']) ? $option['govph_logo'] : get_template_directory_uri().'/images/logo-masthead-large.png');
-      $addLogo = ($option['govph_logo_enable'] == 1) ? '<img src="'.$logo_image.'" />' : 
+      // Barangay San Agustin defaults (used when no Theme Option is set)
+      $logo_image = (!empty($option['govph_logo']) ? $option['govph_logo'] : get_template_directory_uri().'/images/barangay-seal.svg');
+      $agency_name = (!empty($option['govph_agency_name']) ? $option['govph_agency_name'] : 'Barangay San Agustin');
+      $agency_tagline = (!empty($option['govph_agency_tagline']) ? $option['govph_agency_tagline'] : 'Iba, Zambales');
+      $agency_heading = 'Republic of the Philippines &bull; Province of Zambales &bull; Municipality of Iba';
+      $addLogo = ($option['govph_logo_enable'] == 1) ? '<img src="'.$logo_image.'" />' :
       '<div id="textlogo-wrapper">
-        <div id="textlogo-image"><img alt="'.$option['govph_agency_name'].' Official Logo" src="'.$logo_image.'" height="100px" width="100px"/></div>
+        <div id="textlogo-image"><img alt="'.$agency_name.' Official Seal" src="'.$logo_image.'" height="100px" width="100px"/></div>
         <div id="textlogo-inner-wrapper">
-          <div id="agency-heading">Republic of the Philippines</div>
-          <div id="agency-name">'.$option['govph_agency_name'].'</div>
-          <div id="agency-tagline">'.$option['govph_agency_tagline'].'</div>
+          <div id="agency-heading">'.$agency_heading.'</div>
+          <div id="agency-name">'.$agency_name.'</div>
+          <div id="agency-tagline">'.$agency_tagline.'</div>
         </div>
        </div>' ;
       echo $addLogo;

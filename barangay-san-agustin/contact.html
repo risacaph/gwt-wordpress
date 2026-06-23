@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Us — Barangay San Agustin, Iba, Zambales</title>
+  <meta name="description" content="Contact details, location, and feedback form for Barangay San Agustin, Iba, Zambales.">
+  <link rel="icon" href="assets/img/favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,800">
+  <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+
+  <div class="gov-strip">
+    <div class="container">
+      <span><i class="fa fa-globe"></i> GOVPH &mdash; Republic of the Philippines</span>
+      <span class="pst"><i class="fa fa-clock-o"></i> Philippine Standard Time</span>
+    </div>
+  </div>
+
+  <header class="masthead">
+    <div class="container">
+      <div class="seal"><img src="assets/img/barangay-seal.svg" alt="Seal of Barangay San Agustin"></div>
+      <div class="titles">
+        <p class="republic">Republic of the Philippines &bull; Province of Zambales &bull; Municipality of Iba</p>
+        <h1 class="agency">Barangay San Agustin</h1>
+        <p class="place"><i class="fa fa-map-marker"></i> Iba, Zambales</p>
+      </div>
+    </div>
+  </header>
+
+  <nav class="navbar">
+    <div class="container">
+      <button class="nav-toggle" aria-label="Toggle menu" onclick="document.getElementById('menu').classList.toggle('open')"><i class="fa fa-bars"></i></button>
+      <ul id="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="officials.html">Officials</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a class="active" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="crumbs"><div class="container"><a href="index.html">Home</a> &nbsp;/&nbsp; Contact Us</div></div>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Contact Us</h2>
+        <p class="lead">Reach the Barangay Hall for inquiries, assistance, or feedback. We are here to serve you.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div>
+          <div class="panel">
+            <h3><i class="fa fa-building-o"></i> Barangay Hall</h3>
+            <div class="info-line"><span class="i"><i class="fa fa-map-marker"></i></span><span>Barangay San Agustin, Iba, Zambales 2201, Philippines</span></div>
+            <div class="info-line"><span class="i"><i class="fa fa-phone"></i></span><span>Barangay Hotline: (047) 000-0000</span></div>
+            <div class="info-line"><span class="i"><i class="fa fa-mobile"></i></span><span>Mobile: 0900-000-0000</span></div>
+            <div class="info-line"><span class="i"><i class="fa fa-envelope-o"></i></span><span>brgysanagustin.iba@example.gov.ph</span></div>
+            <div class="info-line"><span class="i"><i class="fa fa-clock-o"></i></span><span>Mon&ndash;Fri: 8:00 AM &ndash; 5:00 PM</span></div>
+          </div>
+
+          <div class="panel" style="margin-top:1.5rem;border-left-color:#ce1126;">
+            <h3><i class="fa fa-exclamation-triangle"></i> Emergency Hotlines</h3>
+            <div class="info-line"><span class="i"><i class="fa fa-shield"></i></span><span>Barangay Tanod: (047) 000-0000</span></div>
+            <div class="info-line"><span class="i"><i class="fa fa-ambulance"></i></span><span>Health Emergency: (047) 000-0001</span></div>
+            <div class="info-line"><span class="i"><i class="fa fa-fire-extinguisher"></i></span><span>Iba Fire Station: (047) 811-1234</span></div>
+            <div class="info-line"><span class="i"><i class="fa fa-life-ring"></i></span><span>MDRRMO Iba: (047) 811-5678</span></div>
+            <div class="info-line"><span class="i"><i class="fa fa-medkit"></i></span><span>PNP Iba: 117 / (047) 811-1166</span></div>
+          </div>
+        </div>
+
+        <div>
+          <div class="panel">
+            <h3><i class="fa fa-comment-o"></i> Send Us a Message</h3>
+            <form class="gov" onsubmit="event.preventDefault(); this.reset(); document.getElementById('formNote').style.display='block';">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" placeholder="Juan Dela Cruz" required>
+
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="Inquiry / Request / Feedback" required>
+
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="How can we help you?" required></textarea>
+
+              <p style="margin-top:1rem;"><button class="btn btn-blue" type="submit"><i class="fa fa-paper-plane"></i> Send Message</button></p>
+              <p id="formNote" class="panel" style="display:none;border-left-color:#2e7d32;background:#eef7ee;">
+                <i class="fa fa-check-circle"></i> Thank you! This is a demonstration form &mdash; connect it to your barangay email or a form service to receive messages.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" style="padding-top:0;">
+    <div class="container">
+      <div class="panel" style="border-left-color:#fcd116;">
+        <h3><i class="fa fa-map"></i> Find Us</h3>
+        <p>Barangay San Agustin is located within the Municipality of Iba, the capital town of Zambales. The Barangay Hall is accessible from the Iba town proper along the Iba road network.</p>
+        <iframe
+          title="Map of Iba, Zambales"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=119.95%2C15.31%2C120.02%2C15.36&amp;layer=mapnik&amp;marker=15.3286%2C119.9789"
+          style="width:100%;height:360px;border:1px solid #cbd2d9;border-radius:6px;"
+          loading="lazy"></iframe>
+        <p style="font-size:0.82rem;color:#52606d;margin-top:0.6rem;">Map data &copy; OpenStreetMap contributors. Marker is approximate &mdash; update the coordinates to the exact Barangay Hall location.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="grid grid-3">
+        <div>
+          <h4>Barangay San Agustin</h4>
+          <p>Barangay Hall, San Agustin, Iba, Zambales 2201, Philippines</p>
+          <div class="footer-seals">
+            <img src="assets/img/barangay-seal.svg" alt="Barangay Seal">
+            <img src="assets/img/seal-govph.png" alt="GOVPH Seal">
+          </div>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="about.html">About the Barangay</a></li>
+            <li><a href="officials.html">Barangay Officials</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="news.html">News &amp; Announcements</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Government Links</h4>
+          <ul>
+            <li><a href="https://www.gov.ph" target="_blank" rel="noopener">GOV.PH</a></li>
+            <li><a href="https://www.foi.gov.ph" target="_blank" rel="noopener">Freedom of Information</a></li>
+            <li><a href="https://zambales.gov.ph" target="_blank" rel="noopener">Province of Zambales</a></li>
+            <li><a href="https://www.dilg.gov.ph" target="_blank" rel="noopener">DILG</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <span>&copy; 2026 Barangay San Agustin, Iba, Zambales. All rights reserved.</span>
+        <span>Built with the Government Web Template (GWT)</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

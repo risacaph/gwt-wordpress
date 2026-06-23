@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Seal of Barangay San Agustin">
+  <defs>
+    <path id="circlePath" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0" />
+  </defs>
+  <circle cx="100" cy="100" r="96" fill="#0038a8"/>
+  <circle cx="100" cy="100" r="96" fill="none" stroke="#fcd116" stroke-width="3"/>
+  <circle cx="100" cy="100" r="70" fill="#ffffff"/>
+  <text font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#fcd116" letter-spacing="1">
+    <textPath href="#circlePath" startOffset="2%">BARANGAY SAN AGUSTIN</textPath>
+  </text>
+  <text font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#fcd116" letter-spacing="1">
+    <textPath href="#circlePath" startOffset="58%">IBA, ZAMBALES</textPath>
+  </text>
+  <!-- sun -->
+  <g transform="translate(100,84)" fill="#fcd116">
+    <circle r="13"/>
+    <g stroke="#fcd116" stroke-width="3">
+      <line x1="0" y1="-18" x2="0" y2="-26"/>
+      <line x1="0" y1="18" x2="0" y2="26"/>
+      <line x1="-18" y1="0" x2="-26" y2="0"/>
+      <line x1="18" y1="0" x2="26" y2="0"/>
+      <line x1="-13" y1="-13" x2="-19" y2="-19"/>
+      <line x1="13" y1="-13" x2="19" y2="-19"/>
+      <line x1="-13" y1="13" x2="-19" y2="19"/>
+      <line x1="13" y1="13" x2="19" y2="19"/>
+    </g>
+  </g>
+  <!-- three stars -->
+  <g fill="#ce1126">
+    <polygon points="60,118 63,126 71,126 65,131 67,139 60,134 53,139 55,131 49,126 57,126"/>
+    <polygon points="100,124 103,132 111,132 105,137 107,145 100,140 93,145 95,137 89,132 97,132"/>
+    <polygon points="140,118 143,126 151,126 145,131 147,139 140,134 133,139 135,131 129,126 137,126"/>
+  </g>
+  <text x="100" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#0038a8">EST. REPUBLIC OF THE PHILIPPINES</text>
+</svg>

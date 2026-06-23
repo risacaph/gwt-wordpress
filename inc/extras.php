@@ -46,6 +46,33 @@ function gwt_wp_enhanced_image_navigation( $url, $id ) {
 add_filter( 'attachment_link', 'gwt_wp_enhanced_image_navigation', 10, 2 );
 
 /**
+ * Default top-bar menu for Barangay San Agustin.
+ *
+ * Used as the fallback for the primary navigation when no menu has been
+ * assigned in Appearance > Menus. Links point to the sections of the
+ * front page so the navigation is usable immediately after activation.
+ * Once an admin assigns a real menu, this fallback is no longer used.
+ */
+function gwt_bsa_default_menu() {
+	$home = esc_url( home_url( '/' ) );
+	$items = array(
+		'Home'      => $home,
+		'About'     => $home . '#about',
+		'Officials' => $home . '#officials',
+		'Services'  => $home . '#services',
+		'News'      => $home . '#news',
+		'Contact'   => $home . '#contact',
+	);
+	foreach ( $items as $label => $url ) {
+		printf(
+			'<li class="nav-item"><a href="%s">%s</a></li>',
+			esc_url( $url ),
+			esc_html( $label )
+		);
+	}
+}
+
+/**
  * Filters wp_title to print a neat <title> tag based on what is being viewed.
  */
 function gwt_wp_wp_title( $title, $sep ) {

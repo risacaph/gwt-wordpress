@@ -1,17 +1,176 @@
 /*
- * Theme Name:		GWT-Wordpress 26.0.0 - Latest
+ * Theme Name:		GWT-Wordpress 26.0.0 - Barangay San Agustin
  * Theme URI:		https://i.gov.ph
- * Description:		Custom WordPress theme based on the draft Unified Web Content Policy 
- *					prepared by the PCDSPO, DOST-ASTI, and DOST-ICTO. Theme is built on 
+ * Description:		Custom WordPress theme based on the draft Unified Web Content Policy
+ *					prepared by the PCDSPO, DOST-ASTI, and DOST-ICTO. Theme is built on
  *					HTML5 responsive WordPress framework based on ZURB's Foundation.
- *                  Updated by NGP and GOSD-GWHS
+ *					Branded for Barangay San Agustin, Iba, Zambales.
  * Version:			26.0.0
  * Author:			iGovPhil
  * Author URI:		https://i.gov.ph
  * License:			MIT License
  * License URI:		https://www.opensource.org/licenses/mit-license.php
- * Tags: 			theme-options, rtl-language-support, featured-images, editor-style, custom-menu, 
+ * Tags: 			theme-options, rtl-language-support, featured-images, editor-style, custom-menu,
  *					responsive-layout, right-sidebar, left-sidebar, one-column, two-columns, three-columns
  */
 
-/** Your style here **/
+/* =====================================================================
+   Barangay San Agustin, Iba, Zambales — brand overrides
+   Loaded after theme.css, so these rules win.
+   ===================================================================== */
+
+:root {
+  --gov-blue: #0038a8;       /* Philippine flag blue */
+  --gov-blue-dark: #002a7a;
+  --gov-red: #ce1126;        /* Philippine flag red */
+  --gov-gold: #fcd116;       /* Philippine flag gold */
+  --ink: #1f2933;
+  --muted: #52606d;
+  --line: #e4e7eb;
+  --bg-soft: #f5f7fa;
+}
+
+/* ---- Headings & links ---- */
+h1, h2, h3, h4, h5, h6 { color: var(--gov-blue-dark); }
+.container-main a,
+.container-main a:visited { color: var(--gov-blue); }
+.container-main a:hover,
+.container-main a:focus { color: var(--gov-red); }
+
+/* ---- Top navigation bar ---- */
+#main-nav { background-color: var(--gov-blue); }
+#main-nav li:not(.has-form) a:not(.button),
+#main-nav li.active:not(.has-form) a:not(.button),
+#aux-main li:not(.has-form) a:not(.button) {
+  color: #fff;
+  font-weight: 500;
+}
+#main-nav .name a,
+#main-nav .top-bar-left > ul > li > a { color: #fff !important; }
+#main-nav ul li:hover:not(.has-form) > a,
+#main-nav .dropdown li:not(.has-form) a:not(.button):hover,
+#main-nav .dropdown li:not(.has-form):hover > a:not(.button) {
+  background: var(--gov-blue-dark);
+  color: var(--gov-gold);
+}
+#main-nav li.current-menu-item:not(.has-form) a:not(.button) {
+  background-color: var(--gov-blue-dark);
+  color: var(--gov-gold);
+  box-shadow: inset 0 -3px 0 var(--gov-gold);
+}
+#accessibility-button, #magnifier-button { color: #fff; }
+.top-bar-left > ul > li,
+.top-bar-right > ul > li,
+#aux-main > ul > li { border-right-color: rgba(255,255,255,0.12); }
+
+/* auxiliary strip */
+#auxiliary { background-color: var(--gov-blue-dark); border-bottom: none; }
+#aux-main li:not(.has-form) a:not(.button) { color: #fff; }
+
+/* ---- Masthead ---- */
+div .container-masthead { background: #fff; border-bottom: 4px solid var(--gov-gold); }
+#agency-heading { color: var(--muted); font-size: 0.82rem; letter-spacing: 0.02em; }
+#agency-name { color: var(--gov-blue-dark); border-top-color: var(--gov-gold); }
+#agency-tagline { color: var(--gov-red); font-weight: 600; }
+
+/* ---- Footer ---- */
+#footer { background: #16213a; border-top: 4px solid var(--gov-gold); color: #c9d2e3; }
+#footer .widget, #footer a { color: #c9d2e3; }
+#footer a:hover { color: var(--gov-gold); }
+#footer h1, #footer h2, #footer h3, #footer h4 { color: #fff; }
+
+#back-to-top { background-color: var(--gov-blue); }
+
+/* =====================================================================
+   front-page.php — Barangay homepage sections
+   ===================================================================== */
+.bsa { font-family: "Roboto", Helvetica, Arial, sans-serif; }
+.bsa .wrap { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+
+/* Hero */
+.bsa-hero {
+  position: relative;
+  background: linear-gradient(135deg, var(--gov-blue) 0%, var(--gov-blue-dark) 70%);
+  color: #fff; padding: 3.5rem 0; text-align: center; overflow: hidden;
+}
+.bsa-hero::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 6px;
+  background: linear-gradient(90deg, var(--gov-red) 0 33%, var(--gov-blue-dark) 33% 66%, var(--gov-gold) 66% 100%);
+}
+.bsa-hero h1 { color: #fff; font-size: 2.2rem; margin: 0 0 0.6rem; text-transform: uppercase; }
+.bsa-hero p { font-size: 1.08rem; max-width: 720px; margin: 0 auto 1.4rem; color: #e9eefb; }
+.bsa-btnrow { display: flex; gap: 0.8rem; justify-content: center; flex-wrap: wrap; }
+
+.bsa-btn {
+  display: inline-block; background: var(--gov-gold); color: var(--gov-blue-dark);
+  padding: 0.7rem 1.4rem; border-radius: 4px; text-decoration: none; font-weight: 700;
+  text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.03em; border: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+.bsa-btn:hover { background: #ffdf3d; color: var(--gov-blue-dark); }
+.bsa-btn.outline { background: transparent; color: #fff; border-color: #fff; }
+.bsa-btn.outline:hover { background: #fff; color: var(--gov-blue-dark); }
+.bsa-btn.blue { background: var(--gov-blue); color: #fff; }
+.bsa-btn.blue:hover { background: var(--gov-blue-dark); color: #fff; }
+
+/* Sections */
+.bsa-section { padding: 3rem 0; }
+.bsa-section.alt { background: var(--bg-soft); }
+.bsa-head { text-align: center; margin-bottom: 2rem; }
+.bsa-head h2 { font-size: 1.7rem; text-transform: uppercase; margin: 0 0 0.4rem; color: var(--gov-blue-dark); }
+.bsa-head p { color: var(--muted); max-width: 700px; margin: 0 auto; }
+.bsa-head::after { content: ""; display: block; width: 70px; height: 4px; background: var(--gov-gold); margin: 0.8rem auto 0; border-radius: 2px; }
+
+/* Grids */
+.bsa-grid { display: grid; gap: 1.5rem; }
+.bsa-grid.g2 { grid-template-columns: repeat(2, 1fr); }
+.bsa-grid.g3 { grid-template-columns: repeat(3, 1fr); }
+.bsa-grid.g4 { grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 860px) { .bsa-grid.g3, .bsa-grid.g4 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .bsa-grid.g2, .bsa-grid.g3, .bsa-grid.g4 { grid-template-columns: 1fr; } }
+
+/* Cards */
+.bsa-card {
+  background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05); transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.bsa-card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,0.10); }
+.bsa-card .ic {
+  width: 54px; height: 54px; border-radius: 50%; background: rgba(0,56,168,0.08); color: var(--gov-blue);
+  display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 0.9rem;
+}
+.bsa-card h3 { font-size: 1.05rem; margin: 0 0 0.5rem; text-transform: none; color: var(--gov-blue-dark); }
+.bsa-card p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+
+/* Stats */
+.bsa-stats { background: var(--gov-blue-dark); color: #fff; }
+.bsa-stats .bsa-grid { text-align: center; }
+.bsa-stat .num { font-size: 2.3rem; font-weight: 800; color: var(--gov-gold); display: block; line-height: 1; }
+.bsa-stat .lbl { text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.8rem; color: #cdd7f0; margin-top: 0.4rem; }
+
+/* Officials */
+.bsa-official { text-align: center; background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 1.4rem 1rem; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+.bsa-official .av {
+  width: 90px; height: 90px; border-radius: 50%; margin: 0 auto 0.8rem;
+  background: linear-gradient(135deg, var(--gov-blue), var(--gov-blue-dark)); color: #fff;
+  display: flex; align-items: center; justify-content: center; font-size: 1.8rem; font-weight: 700; border: 4px solid var(--gov-gold);
+}
+.bsa-official .nm { font-weight: 700; color: var(--gov-blue-dark); font-size: 1rem; }
+.bsa-official .rl { color: var(--gov-red); font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.03em; margin-top: 0.2rem; }
+.bsa-official.captain { border: 2px solid var(--gov-gold); }
+
+/* News */
+.bsa-news { border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+.bsa-news .bar { height: 8px; background: linear-gradient(90deg, var(--gov-blue), var(--gov-gold)); }
+.bsa-news .body { padding: 1.3rem; }
+.bsa-news .date { font-size: 0.78rem; color: var(--gov-red); text-transform: uppercase; letter-spacing: 0.04em; font-weight: 600; }
+.bsa-news h3 { font-size: 1.05rem; margin: 0.4rem 0 0.5rem; text-transform: none; color: var(--gov-blue-dark); }
+.bsa-news p { color: var(--muted); font-size: 0.92rem; margin: 0; }
+
+/* Two-column intro */
+.bsa-two { display: grid; grid-template-columns: 1.4fr 1fr; gap: 2.5rem; align-items: start; }
+@media (max-width: 820px) { .bsa-two { grid-template-columns: 1fr; } }
+.bsa-panel { background: var(--bg-soft); border: 1px solid var(--line); border-left: 5px solid var(--gov-blue); border-radius: 6px; padding: 1.4rem; }
+.bsa-panel h3 { margin-top: 0; color: var(--gov-blue-dark); }
+.bsa-prose p { color: var(--ink); }
+.bsa-prose h2 { color: var(--gov-blue-dark); }

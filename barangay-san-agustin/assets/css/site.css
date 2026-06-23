@@ -1,0 +1,274 @@
+/*
+ * Barangay San Agustin, Iba, Zambales — Official Website
+ * Built on the Philippine Government Web Template (GWT)
+ * Styling layered on top of ZURB Foundation 6 + theme.css
+ */
+
+:root {
+  --gov-blue: #0038a8;      /* Philippine flag blue */
+  --gov-blue-dark: #002a7a;
+  --gov-red: #ce1126;       /* Philippine flag red */
+  --gov-gold: #fcd116;      /* Philippine flag gold */
+  --ink: #1f2933;
+  --muted: #52606d;
+  --line: #e4e7eb;
+  --bg-soft: #f5f7fa;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: var(--ink);
+  margin: 0;
+  background: #fff;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  color: var(--gov-blue-dark);
+  line-height: 1.15;
+}
+
+a { color: var(--gov-blue); }
+a:hover { color: var(--gov-red); }
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+
+/* ---------- Top utility strip ---------- */
+.gov-strip {
+  background: var(--gov-blue-dark);
+  color: #fff;
+  font-size: 0.78rem;
+}
+.gov-strip .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  min-height: 36px;
+  gap: 0.5rem;
+}
+.gov-strip a { color: #fff; text-decoration: none; }
+.gov-strip a:hover { color: var(--gov-gold); }
+.gov-strip .pst { font-weight: 600; letter-spacing: 0.02em; }
+
+/* ---------- Masthead ---------- */
+.masthead {
+  background: #fff;
+  border-bottom: 4px solid var(--gov-gold);
+}
+.masthead .container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.masthead .seal {
+  width: 84px;
+  height: 84px;
+  flex: 0 0 auto;
+}
+.masthead .seal img,
+.masthead .seal svg { width: 100%; height: 100%; object-fit: contain; }
+.masthead .titles { line-height: 1.25; }
+.masthead .titles .republic { font-size: 0.8rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; margin: 0; }
+.masthead .titles .agency {
+  font-size: 1.55rem;
+  margin: 0.1rem 0 0;
+  color: var(--gov-blue-dark);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.masthead .titles .place { font-size: 0.92rem; color: var(--gov-red); margin: 0.15rem 0 0; font-weight: 600; }
+
+/* ---------- Navigation ---------- */
+.navbar { background: var(--gov-blue); position: sticky; top: 0; z-index: 50; box-shadow: 0 2px 6px rgba(0,0,0,0.18); }
+.navbar .container { display: flex; align-items: center; flex-wrap: wrap; }
+.navbar ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; }
+.navbar a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.85rem 1.1rem;
+  font-size: 0.92rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  transition: background 0.2s ease;
+}
+.navbar a:hover { background: var(--gov-blue-dark); color: var(--gov-gold); }
+.navbar a.active { background: var(--gov-blue-dark); border-bottom: 3px solid var(--gov-gold); }
+.nav-toggle { display: none; background: none; border: 0; color: #fff; font-size: 1.5rem; padding: 0.6rem 1rem; cursor: pointer; margin-left: auto; }
+
+@media screen and (max-width: 760px) {
+  .navbar .container { align-items: stretch; }
+  .nav-toggle { display: block; }
+  .navbar ul { flex-direction: column; width: 100%; display: none; }
+  .navbar ul.open { display: flex; }
+  .navbar a { border-top: 1px solid rgba(255,255,255,0.12); }
+  .masthead .container { flex-direction: column; text-align: center; }
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  background: linear-gradient(135deg, var(--gov-blue) 0%, var(--gov-blue-dark) 70%);
+  color: #fff;
+  padding: 4rem 0;
+  text-align: center;
+  overflow: hidden;
+}
+.hero::after {
+  content: "";
+  position: absolute; left: 0; right: 0; bottom: 0; height: 6px;
+  background: linear-gradient(90deg, var(--gov-red) 0 33%, var(--gov-blue-dark) 33% 66%, var(--gov-gold) 66% 100%);
+}
+.hero h1 { color: #fff; font-size: 2.4rem; margin: 0 0 0.6rem; text-transform: uppercase; }
+.hero p { font-size: 1.1rem; max-width: 720px; margin: 0 auto 1.4rem; color: #e9eefb; }
+.hero .btn-row { display: flex; gap: 0.8rem; justify-content: center; flex-wrap: wrap; }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block;
+  background: var(--gov-gold);
+  color: var(--gov-blue-dark);
+  padding: 0.7rem 1.4rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+.btn:hover { background: #ffdf3d; color: var(--gov-blue-dark); }
+.btn.btn-outline { background: transparent; color: #fff; border-color: #fff; }
+.btn.btn-outline:hover { background: #fff; color: var(--gov-blue-dark); }
+.btn.btn-blue { background: var(--gov-blue); color: #fff; }
+.btn.btn-blue:hover { background: var(--gov-blue-dark); }
+
+/* ---------- Sections ---------- */
+.section { padding: 3rem 0; }
+.section.alt { background: var(--bg-soft); }
+.section-head { text-align: center; margin-bottom: 2rem; }
+.section-head h2 { font-size: 1.8rem; text-transform: uppercase; margin: 0 0 0.4rem; }
+.section-head .lead { color: var(--muted); max-width: 700px; margin: 0 auto; }
+.section-head::after {
+  content: ""; display: block; width: 70px; height: 4px;
+  background: var(--gov-gold); margin: 0.8rem auto 0; border-radius: 2px;
+}
+
+/* ---------- Grid helpers ---------- */
+.grid { display: grid; gap: 1.5rem; }
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+@media screen and (max-width: 860px) { .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); } }
+@media screen and (max-width: 560px) { .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; } }
+
+/* ---------- Cards ---------- */
+.card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,0.10); }
+.card .icon {
+  width: 54px; height: 54px; border-radius: 50%;
+  background: rgba(0,56,168,0.08); color: var(--gov-blue);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.4rem; margin-bottom: 0.9rem;
+}
+.card h3 { font-size: 1.1rem; margin: 0 0 0.5rem; text-transform: none; }
+.card p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+
+/* ---------- Stats ---------- */
+.stats { background: var(--gov-blue-dark); color: #fff; }
+.stats .grid-4 { text-align: center; }
+.stat .num { font-size: 2.4rem; font-weight: 800; color: var(--gov-gold); display: block; line-height: 1; }
+.stat .label { text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.82rem; color: #cdd7f0; margin-top: 0.4rem; }
+
+/* ---------- Officials ---------- */
+.official {
+  text-align: center; background: #fff; border: 1px solid var(--line);
+  border-radius: 8px; padding: 1.5rem 1rem; box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+.official .avatar {
+  width: 96px; height: 96px; border-radius: 50%; margin: 0 auto 0.9rem;
+  background: linear-gradient(135deg, var(--gov-blue), var(--gov-blue-dark));
+  color: #fff; display: flex; align-items: center; justify-content: center;
+  font-size: 2rem; font-weight: 700; border: 4px solid var(--gov-gold);
+}
+.official .name { font-weight: 700; color: var(--gov-blue-dark); font-size: 1.05rem; }
+.official .role { color: var(--gov-red); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.03em; margin-top: 0.2rem; }
+.official.captain { border-color: var(--gov-gold); border-width: 2px; }
+
+/* ---------- Lists / content ---------- */
+.prose { max-width: 820px; }
+.prose h3 { margin-top: 1.6rem; }
+.prose ul { padding-left: 1.2rem; }
+.prose li { margin-bottom: 0.4rem; }
+
+.two-col { display: grid; grid-template-columns: 1.4fr 1fr; gap: 2.5rem; align-items: start; }
+@media screen and (max-width: 820px) { .two-col { grid-template-columns: 1fr; } }
+
+.panel {
+  background: var(--bg-soft); border: 1px solid var(--line);
+  border-left: 5px solid var(--gov-blue); border-radius: 6px; padding: 1.4rem;
+}
+.panel h3 { margin-top: 0; }
+
+/* ---------- News ---------- */
+.news-item { border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+.news-item .thumb { height: 8px; background: linear-gradient(90deg, var(--gov-blue), var(--gov-gold)); }
+.news-item .body { padding: 1.3rem; }
+.news-item .date { font-size: 0.78rem; color: var(--gov-red); text-transform: uppercase; letter-spacing: 0.04em; font-weight: 600; }
+.news-item h3 { font-size: 1.1rem; margin: 0.4rem 0 0.5rem; text-transform: none; }
+.news-item p { color: var(--muted); font-size: 0.93rem; margin: 0 0 0.8rem; }
+.news-item a.more { font-weight: 600; text-decoration: none; font-size: 0.88rem; }
+
+/* ---------- Tables ---------- */
+.table-wrap { overflow-x: auto; }
+table.gov { width: 100%; border-collapse: collapse; background: #fff; }
+table.gov th, table.gov td { padding: 0.75rem 1rem; border: 1px solid var(--line); text-align: left; vertical-align: top; }
+table.gov thead th { background: var(--gov-blue); color: #fff; text-transform: uppercase; font-size: 0.82rem; letter-spacing: 0.03em; }
+table.gov tbody tr:nth-child(even) { background: var(--bg-soft); }
+
+/* ---------- Contact ---------- */
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+@media screen and (max-width: 760px) { .contact-grid { grid-template-columns: 1fr; } }
+.info-line { display: flex; gap: 0.8rem; margin-bottom: 1rem; align-items: flex-start; }
+.info-line .i { color: var(--gov-blue); font-size: 1.1rem; width: 24px; text-align: center; padding-top: 2px; }
+form.gov label { display: block; font-weight: 600; margin: 0.8rem 0 0.3rem; font-size: 0.9rem; }
+form.gov input, form.gov textarea {
+  width: 100%; padding: 0.6rem 0.7rem; border: 1px solid #cbd2d9; border-radius: 4px; font-family: inherit; font-size: 0.95rem;
+}
+form.gov input:focus, form.gov textarea:focus { outline: none; border-color: var(--gov-blue); box-shadow: 0 0 0 2px rgba(0,56,168,0.15); }
+
+/* ---------- Footer ---------- */
+.site-footer { background: #16213a; color: #c9d2e3; padding: 3rem 0 0; }
+.site-footer a { color: #c9d2e3; text-decoration: none; }
+.site-footer a:hover { color: var(--gov-gold); }
+.site-footer h4 { color: #fff; text-transform: uppercase; font-size: 0.95rem; letter-spacing: 0.03em; margin: 0 0 1rem; }
+.site-footer .grid-3 { gap: 2.5rem; }
+.site-footer ul { list-style: none; padding: 0; margin: 0; }
+.site-footer li { margin-bottom: 0.5rem; font-size: 0.92rem; }
+.footer-seals { display: flex; gap: 1rem; align-items: center; margin-top: 1rem; }
+.footer-seals img { height: 60px; width: auto; background: #fff; border-radius: 6px; padding: 4px; }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.12); margin-top: 2.5rem; padding: 1.2rem 0;
+  font-size: 0.82rem; text-align: center; color: #8a96ad;
+}
+.footer-bottom .container { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; }
+
+/* breadcrumb */
+.crumbs { background: var(--bg-soft); border-bottom: 1px solid var(--line); font-size: 0.85rem; }
+.crumbs .container { padding: 0.7rem 1rem; color: var(--muted); }
+.crumbs a { text-decoration: none; }
