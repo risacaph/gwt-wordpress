@@ -322,6 +322,12 @@ Press esc, or click the close the button to close this dialog box.
                         <nav class="top-bar-right">
 
                             <ul class="dropdown menu" data-dropdown-menu>
+                                <?php
+                                // Visitor counter (BSA Visitor Counter plugin), shown upper-right when active.
+                                if ( function_exists( 'bsa_vc_render' ) ) {
+                                    echo bsa_vc_render( 'topbar' );
+                                }
+                                ?>
                                 <?php wp_nav_menu( array('theme_location'  => 'topbar_right', 'items_wrap' => '%3$s', 'container' => false, 'fallback_cb' => false, 'walker' => new Topbar_Nav_Menu() )); ?>
                                 <?php if(govph_displayoptions( 'govph_disable_search' )): ?>
                                 <li class="search right"><?php get_search_form(); ?></li>
